@@ -1,0 +1,40 @@
+' ******************************************************************************
+' swxJRNL.swj - journal recorded on 08/27/18 by ASUS
+' *****************************************************************************
+Dim swApp As Object
+
+Dim Part As Object
+Dim boolstatus As Boolean
+Dim longstatus As Long, longwarnings As Long
+
+Sub main()
+
+Set swApp = _
+Application.SldWorks
+
+swApp.ActivateDoc2 "Full_assembly", False, longstatus
+Set Part = swApp.ActiveDoc
+Set Part = swApp.ActiveDoc
+Dim myModelView As Object
+Set myModelView = Part.ActiveView
+myModelView.FrameLeft = 0
+myModelView.FrameTop = 0
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+boolstatus = Part.Extension.SelectByID2("ExplView2", "EXPLODEDVIEWS", 0, 0, 0, False, 0, Nothing, 0)
+boolstatus = Part.Extension.SelectByID2("Explode Step3", "EXPLODESTEPS", 0, 0, 0, False, 0, Nothing, 0)
+boolstatus = Part.Extension.SelectByID2("ExplView2", "EXPLODEDVIEWS", 0, 0, 0, False, 0, Nothing, 0)
+boolstatus = Part.Extension.SelectByID2("ExplView2", "EXPLODEDVIEWS", 0, 0, 0, False, 0, Nothing, 0)
+Part.ViewCollapseAssembly
+boolstatus = Part.Extension.SelectByID2("ExplView2", "EXPLODEDVIEWS", 0, 0, 0, False, 0, Nothing, 0)
+boolstatus = Part.Extension.SelectByID2("ExplView2", "EXPLODEDVIEWS", 0, 0, 0, False, 0, Nothing, 0)
+boolstatus = Part.Extension.SelectByID2("ExplView2", "EXPLODEDVIEWS", 0, 0, 0, False, 0, Nothing, 0)
+boolstatus = Part.Extension.SelectByID2("ExplView2", "EXPLODEDVIEWS", 0, 0, 0, False, 0, Nothing, 0)
+boolstatus = Part.Extension.SelectByID2("ExplView2", "EXPLODEDVIEWS", 0, 0, 0, False, 0, Nothing, 0)
+Set myModelView = Part.ActiveView
+myModelView.FrameState = swWindowState_e.swWindowMaximized
+Part.ClearSelection2 True
+swApp.ExitApp
+End Sub
